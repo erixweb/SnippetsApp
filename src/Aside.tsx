@@ -1,21 +1,28 @@
-import { useContext, useEffect } from "react"
-import { SnippetContext } from "./App"
+import { useSnippetStore } from "./useSnippetStore"
 
 export default function Aside() {
-    const snippet = useContext(SnippetContext)
+    const snippet = useSnippetStore((state: any) => state.snippet)
 
-    useEffect(() => {
-        console.log(snippet)
-    }, [snippet])
+    const { changeSnippet } = useSnippetStore()
+
+    localStorage.setItem(
+        "snippet",
+        `const ENDPOINT: string = "https://midu.dev"
+        
+fetch(ENDPOINT)
+    .then(res => res.text())
+        `
+    )
     
-    const changeSnippet = () => {
-        localStorage.setItem("change", "true")
-        localStorage.setItem("changes", "Hello world")
-    }
-
     return (
         <aside>
-            <button onClick={changeSnippet}>Snippet</button>
+            <button
+                onClick={() => {
+                    changeSnippet("fetch")
+                }}
+            >
+                Change Snippet
+            </button>
         </aside>
     )
 }
