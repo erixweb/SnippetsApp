@@ -7,13 +7,15 @@ export default function Aside() {
 
     localStorage.setItem(
         "snippet",
-        `const ENDPOINT: string = "https://midu.dev"
-        
+        JSON.stringify({
+            "fetch": `const ENDPOINT: string = "https://midu.dev"
+            
 fetch(ENDPOINT)
     .then(res => res.text())
-        `
+            `
+        })
     )
-    
+
     return (
         <aside>
             <button

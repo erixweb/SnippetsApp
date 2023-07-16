@@ -6,7 +6,7 @@ export default function Code() {
     let codeSnippet = ""
 
     if (localStorage.snippet) {
-        codeSnippet = localStorage.snippet
+        codeSnippet = JSON.parse(localStorage.snippet)[snippet]
     }
 
     return (
@@ -19,7 +19,8 @@ export default function Code() {
                 fontSize: 17,
                 fontFamily:
                     "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-            }}
+                tabSize: 4
+            }} 
         />
     )
 }
