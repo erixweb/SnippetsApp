@@ -1,13 +1,13 @@
 import { create } from "zustand"
 
 interface SnippetState {
-    snippet: string
-    changeSnippet: (value: string) => void
+    snippet: number
+    changeSnippet: (value: number) => void
 }
 
 export const useSnippetStore = create<SnippetState>((set) => ({
-    snippet: "",
-    changeSnippet: (value: string) => set(() => ({
+    snippet: 0,
+    changeSnippet: (value: number) => set(() => ({
         snippet: value
     }))
 }))

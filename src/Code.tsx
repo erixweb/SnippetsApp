@@ -3,10 +3,12 @@ import { useSnippetStore } from "./useSnippetStore"
 
 export default function Code() {
     const { snippet } = useSnippetStore()
+
     let codeSnippet = ""
 
+
     if (localStorage.snippet) {
-        codeSnippet = JSON.parse(localStorage.snippet)[snippet]
+        codeSnippet = JSON.parse(localStorage.snippet)[snippet].content
     }
 
     return (

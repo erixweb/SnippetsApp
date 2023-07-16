@@ -5,26 +5,46 @@ export default function Aside() {
 
     const { changeSnippet } = useSnippetStore()
 
-    localStorage.setItem(
-        "snippet",
-        JSON.stringify({
-            "fetch": `const ENDPOINT: string = "https://midu.dev"
+    const fetchSnippet = [
+        {
+            name: "fetch",
+            content: `const ENDPOINT: string = "https://midu.dev"
             
-fetch(ENDPOINT)
-    .then(res => res.text())
-            `
-        })
-    )
+        fetch(ENDPOINT)
+            .then(res => res.text())`,
+        },
+        {
+            name: "pokeapi",
+            content: `
+            const ENDPOINT: string = "https://pokeapi.com"
+            
+            fetch(ENDPOINT)
+                .then(res => res.text()),
+            `,
+        },
+    ]
+
+    localStorage.setItem("snippet", JSON.stringify(fetchSnippet))
+
+    const storage = JSON.parse(localStorage.snippet)
+
+    interface ISnippet {
+        name: string,
+        content: string
+    }
 
     return (
         <aside>
-            <button
-                onClick={() => {
-                    changeSnippet("fetch")
-                }}
-            >
-                Change Snippet
-            </button>
+            {storage.map((snippet: ISnippet, index: number) => (
+                <button
+                    key={index}
+                    onClick={() => {
+                        changeSnippet(index)
+                    }}
+                >
+                    {snippet.name}
+                </button>
+            ))}
         </aside>
     )
 }
