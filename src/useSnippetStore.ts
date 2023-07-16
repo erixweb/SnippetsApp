@@ -1,11 +1,6 @@
 import { create } from "zustand"
 
-interface SnippetState {
-    snippet: number
-    changeSnippet: (value: number) => void
-}
-
-export const useSnippetStore = create<SnippetState>((set) => ({
+export const useSnippetStore = create<ISnippetState>((set) => ({
     snippet: 0,
     changeSnippet: (value: number) => set(() => ({
         snippet: value

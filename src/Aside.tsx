@@ -1,7 +1,6 @@
 import { useSnippetStore } from "./useSnippetStore"
 
 export default function Aside() {
-    const snippet = useSnippetStore((state: any) => state.snippet)
 
     const { changeSnippet } = useSnippetStore()
 
@@ -28,10 +27,6 @@ export default function Aside() {
 
     const storage = JSON.parse(localStorage.snippet)
 
-    interface ISnippet {
-        name: string,
-        content: string
-    }
 
     return (
         <aside>
