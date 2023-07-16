@@ -7,8 +7,8 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "snippetss",
-    "version": "0.0.0"
+    "productName": "SnippetsApp",
+    "version": "0.1.0"
   },
   "tauri": {
     "allowlist": {
@@ -36,8 +36,9 @@
     "windows": [
       {
         "fullscreen": false,
+        "focus": true,
         "resizable": true,
-        "title": "snippetss",
+        "title": "SnippetsApp",
         "width": 800,
         "height": 600
       }

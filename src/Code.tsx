@@ -18,9 +18,10 @@ export default function Code() {
             language="typescript"
             value={codeSnippet}
             options={{
-                fontSize: 17,
+                fontSize: 18,
                 fontFamily:
-                    "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+                    "'Cascadia Code', Arial",
+                fontWeight: "400",
                 tabSize: 4
             }} 
         />

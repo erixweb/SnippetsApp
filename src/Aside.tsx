@@ -9,16 +9,15 @@ export default function Aside() {
             name: "fetch",
             content: `const ENDPOINT: string = "https://midu.dev"
             
-        fetch(ENDPOINT)
-            .then(res => res.text())`,
+fetch(ENDPOINT)
+    .then(res => res.text())`,
         },
         {
             name: "pokeapi",
-            content: `
-            const ENDPOINT: string = "https://pokeapi.com"
+            content: `const ENDPOINT: string = "https://pokeapi.com"
             
-            fetch(ENDPOINT)
-                .then(res => res.text()),
+fetch(ENDPOINT)
+    .then(res => res.text()),
             `,
         },
     ]
