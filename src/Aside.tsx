@@ -17,7 +17,7 @@ fetch(ENDPOINT)
             content: `const ENDPOINT: string = "https://pokeapi.com"
             
 fetch(ENDPOINT)
-    .then(res => res.text()),
+    .then(res => res.text())
             `,
         },
     ]
