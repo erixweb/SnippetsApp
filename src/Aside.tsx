@@ -39,6 +39,9 @@ fetch(ENDPOINT)
                     {snippet.name}
                 </button>
             ))}
+            <button onClick={() => { changeSnippet(2) }}>
+                New snippet
+            </button>
         </aside>
     )
 }
